@@ -3,7 +3,7 @@ object Form2: TForm2
   Top = 184
   Width = 768
   Height = 540
-  Caption = 'Form WALI KELAS'
+  Caption = 'FORM WALI KELAS'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -68,7 +68,7 @@ object Form2: TForm2
   object Label5: TLabel
     Left = 32
     Top = 184
-    Width = 89
+    Width = 87
     Height = 18
     Caption = 'Tanggal Lahir'
     Font.Charset = DEFAULT_CHARSET
@@ -139,6 +139,9 @@ object Form2: TForm2
     ItemHeight = 13
     TabOrder = 2
     Text = '---PILIH JENIS KELAMIN---'
+    Items.Strings = (
+      'LAKI-LAKI'
+      'PEREMPUAN')
   end
   object DateTimePicker1: TDateTimePicker
     Left = 176
@@ -165,12 +168,15 @@ object Form2: TForm2
   end
   object cbbstts: TComboBox
     Left = 488
-    Top = 72
+    Top = 64
     Width = 169
     Height = 21
     ItemHeight = 13
     TabOrder = 6
     Text = '---PILIH STATUS---'
+    Items.Strings = (
+      'MENIKAH'
+      'BELUM MENIKAH')
   end
   object DBGrid1: TDBGrid
     Left = 32
@@ -249,7 +255,6 @@ object Form2: TForm2
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
-    Active = True
     SQL.Strings = (
       'select * from wali_kelas')
     Params = <>

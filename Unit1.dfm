@@ -1,9 +1,9 @@
 object Form1: TForm1
-  Left = 214
-  Top = 149
+  Left = 501
+  Top = 152
   Width = 846
   Height = 603
-  Caption = 'Form SISWA'
+  Caption = 'FORM SISWA'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -244,6 +244,7 @@ object Form1: TForm1
     Height = 21
     ItemHeight = 13
     TabOrder = 7
+    Text = '---PILIH JURUSAN---'
     Items.Strings = (
       'IPA'
       'IPS'
@@ -277,6 +278,7 @@ object Form1: TForm1
     Height = 21
     ItemHeight = 13
     TabOrder = 11
+    Text = '---PILIH STATUS---'
     Items.Strings = (
       'AKTIF '
       'TIDAK AKTIF')

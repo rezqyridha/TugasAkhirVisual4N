@@ -38,6 +38,8 @@ type
     edtalmat: TEdit;
     Label10: TLabel;
     edtnik: TEdit;
+    Label11: TLabel;
+    ComboBox1: TComboBox;
   private
     { Private declarations }
   public

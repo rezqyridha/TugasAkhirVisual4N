@@ -3,7 +3,7 @@ object Form3: TForm3
   Top = 111
   Width = 786
   Height = 601
-  Caption = 'Form ORTU'
+  Caption = 'FORM ORANG TUA'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -143,6 +143,19 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
   end
+  object Label11: TLabel
+    Left = 384
+    Top = 224
+    Width = 117
+    Height = 18
+    Caption = 'Status Orang Tua'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object edtnmortu: TEdit
     Left = 176
     Top = 64
@@ -165,6 +178,9 @@ object Form3: TForm3
     ItemHeight = 13
     TabOrder = 2
     Text = '---PILIH JENIS KELAMIN---'
+    Items.Strings = (
+      'LAKI-LAKI'
+      'PEREMPUAN')
   end
   object DateTimePicker1: TDateTimePicker
     Left = 176
@@ -196,7 +212,10 @@ object Form3: TForm3
     Height = 21
     ItemHeight = 13
     TabOrder = 6
-    Text = '---PILIH STATUS---'
+    Text = '---PILIH STATUS PEKERJAAN---'
+    Items.Strings = (
+      'AKTIF'
+      'NON AKTIF')
   end
   object DBGrid1: TDBGrid
     Left = 32
@@ -272,6 +291,18 @@ object Form3: TForm3
     Width = 169
     Height = 21
     TabOrder = 15
+  end
+  object ComboBox1: TComboBox
+    Left = 512
+    Top = 224
+    Width = 169
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 16
+    Text = '---PILIH STATUS ORANG TUA---'
+    Items.Strings = (
+      'KANDUNG'
+      'TIRI')
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
