@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 501
-  Top = 152
+  Left = 301
+  Top = 140
   Width = 846
   Height = 603
   Caption = 'FORM SISWA'
@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -210,7 +211,7 @@ object Form1: TForm1
     Height = 21
     TabOrder = 3
   end
-  object DateTimePicker1: TDateTimePicker
+  object dtp1: TDateTimePicker
     Left = 144
     Top = 168
     Width = 193
@@ -226,6 +227,7 @@ object Form1: TForm1
     Height = 21
     ItemHeight = 13
     TabOrder = 5
+    Text = '---PILIH JENIS KELAMIN---'
     Items.Strings = (
       'LAKI-LAKI'
       'PEREMPUAN')
@@ -295,6 +297,7 @@ object Form1: TForm1
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object btnbaru: TButton
     Left = 32
@@ -303,6 +306,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'Baru'
     TabOrder = 13
+    OnClick = btnbaruClick
   end
   object btnsimpan: TButton
     Left = 144
@@ -311,6 +315,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'Simpan'
     TabOrder = 14
+    OnClick = btnsimpanClick
   end
   object btnedit: TButton
     Left = 256
@@ -319,6 +324,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'Edit'
     TabOrder = 15
+    OnClick = btneditClick
   end
   object btnhapus: TButton
     Left = 368
@@ -327,6 +333,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'Hapus'
     TabOrder = 16
+    OnClick = btnhapusClick
   end
   object btnbatal: TButton
     Left = 480
@@ -335,6 +342,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'Batal'
     TabOrder = 17
+    OnClick = btnbatalClick
   end
   object btnlpr: TButton
     Left = 592
