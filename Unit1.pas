@@ -46,6 +46,7 @@ type
     btnbatal: TButton;
     btnlpr: TButton;
     frxDBDataset1: TfrxDBDataset;
+    ZQuery2: TZQuery;
     frxReport1: TfrxReport;
     procedure FormShow(Sender: TObject);
     procedure posisiawal;
@@ -57,6 +58,7 @@ type
     procedure btnhapusClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btnbatalClick(Sender: TObject);
+    procedure btnlprClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -282,6 +284,11 @@ end;
 procedure TForm1.btnbatalClick(Sender: TObject);
 begin
 posisiawal;
+end;
+
+procedure TForm1.btnlprClick(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.
