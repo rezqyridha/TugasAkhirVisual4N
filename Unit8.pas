@@ -78,7 +78,7 @@ procedure TForm8.editclear;
 begin
 edt1.Text:='';
 edt2.Text:='';
-cbb1.Text:='';
+cbb1.Clear;
 end;
 
 procedure TForm8.editenable;

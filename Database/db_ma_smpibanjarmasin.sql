@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jul 2023 pada 06.33
+-- Waktu pembuatan: 11 Jul 2023 pada 15.00
 -- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.0.25
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_sekolah`
+-- Database: `db_ma_smpibanjarmasin`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `catatan` (
 --
 
 INSERT INTO `catatan` (`Id_catatan`, `Tanggal`, `Semester`, `Id_siswa`, `Id_walikelas`, `Id_orgtua`, `Id_poin`) VALUES
-(1, '23-03-2023', 'Semester 2', '1', '1', '1', '1');
+(1, '2022-06-28', '2', '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -63,8 +63,7 @@ CREATE TABLE `hubungan` (
 --
 
 INSERT INTO `hubungan` (`Id_hubungan`, `Id_siswa`, `Id_orgtua`, `Status hub anak`, `Keterangan`) VALUES
-(1, '1', '1', 'Kandung', 'Ayah'),
-(2, '2', '2', 'Kandung', 'Ibu');
+(1, '1', '1', 'KANDUNG', 'AYAH ');
 
 -- --------------------------------------------------------
 
@@ -83,7 +82,8 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `Nama_kelas`, `Jurusan`) VALUES
-(1, '11 A', 'IPA');
+(1, '12', 'IPA'),
+(2, '11', 'IPA');
 
 -- --------------------------------------------------------
 
@@ -109,8 +109,7 @@ CREATE TABLE `orang_tua` (
 --
 
 INSERT INTO `orang_tua` (`Id_orgtua`, `Nama_orangtua`, `Tanggal_lahir`, `Telp`, `Pendidikan_terakhir`, `Status_pekerjaan`, `Pekerjaan`, `Nik_nomorKTP`, `Alamat_orgtua`, `Status_orgtua`) VALUES
-(1, 'SITI NAZMI', '21-02-1988', '082252567828', 'SMA Sederajat', 'Aktif', 'Admin Tambang', '2100928372', 'Desa Sikui km27', 'Kandung'),
-(2, 'AHMAD', '1991-06-14', '082252174563', 'SMA Sederajat', 'Aktif', 'SUPIR TAMBANG', '2100928312', 'Desa Sikui km35', 'Kandung');
+(1, 'Yusuf', '1967-07-10', '0213456', 'S1', 'AKTIF', 'Swasta', '620304567', 'Banjarmasin', 'KANDUNG');
 
 -- --------------------------------------------------------
 
@@ -130,8 +129,8 @@ CREATE TABLE `poin` (
 --
 
 INSERT INTO `poin` (`Id_poin`, `Nama_poin`, `Bobot`, `Tipe_poin`) VALUES
-(1, 'Ranking 1', '30', 'Sangat Baik'),
-(2, 'RANGKING 2', '20', 'CUKUP BAIK');
+(1, 'Juara Nasional', '50', 'PRESTASI'),
+(2, 'Terlambat', '10', 'PELANGGARAN');
 
 -- --------------------------------------------------------
 
@@ -160,7 +159,7 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`Id_Siswa`, `Nis`, `Nisn`, `Nama_Siswa`, `Nik`, `Tanggal lahir`, `Jenis Kelamin`, `Tingkat Kelas`, `Jurusan`, `Wali kelas`, `Alamat`, `Telp`, `Status`) VALUES
-(1, 2147483000, 20022111, 'Muhammad faishal', 610034522, '20', 'Laki-laki', 'Kelas_8', 'Ipa', 'Sri wulan', 'Flamboyan_2', '82152776123', 'siswa');
+(2, 11234, 55432, 'Arya', 6203044, '2023-07-09', 'LAKI-LAKI', '12', 'IPS', 'Taufik', 'Banjarmasin', '62030', 'AKTIF ');
 
 -- --------------------------------------------------------
 
@@ -181,7 +180,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Id_user`, `Nik`, `Nama`, `Level`, `Status`) VALUES
-(1, '2110202934', 'Desi', 'Admin', 'Guru');
+(1, '620304567', 'Rezqy', 'ADMIN', 'GURU'),
+(2, '620303012', 'Bayu', 'MEMBER', 'MURID');
 
 -- --------------------------------------------------------
 
@@ -205,8 +205,8 @@ CREATE TABLE `wali_kelas` (
 --
 
 INSERT INTO `wali_kelas` (`id_wali`, `Nama_wali_kelas`, `Tanggal_lahir`, `Telp`, `Pendidikan`, `Status`, `Wali_Kelas`, `Jenis_Kelamin`) VALUES
-(1, 'AHMAD Raffi', '2023-04-26', '082252173504', 'S1 Hukum', 'MENIKAH', '12 C', 'PEREMPUAN'),
-(2, 'Muhammad Galang', '2023-05-21', '082252173004', 'S1 Kehutanan', 'BELUM MENIKAH', '10 B', 'LAKI-LAKI');
+(1, 'Taufik', '1988-07-10', '0876543', 'S1', 'MENIKAH', '12', 'LAKI-LAKI'),
+(2, 'Bambang', '1965-07-10', '023145', 'S2', 'MENIKAH', '11', 'LAKI-LAKI');
 
 --
 -- Indexes for dumped tables
@@ -274,31 +274,31 @@ ALTER TABLE `catatan`
 -- AUTO_INCREMENT untuk tabel `hubungan`
 --
 ALTER TABLE `hubungan`
-  MODIFY `Id_hubungan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_hubungan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `orang_tua`
 --
 ALTER TABLE `orang_tua`
-  MODIFY `Id_orgtua` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_orgtua` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `poin`
 --
 ALTER TABLE `poin`
-  MODIFY `Id_poin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_poin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `Id_Siswa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_Siswa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
@@ -310,7 +310,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `wali_kelas`
 --
 ALTER TABLE `wali_kelas`
-  MODIFY `id_wali` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_wali` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

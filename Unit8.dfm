@@ -1,6 +1,6 @@
 object Form8: TForm8
-  Left = 184
-  Top = 123
+  Left = 420
+  Top = 254
   Width = 816
   Height = 491
   Caption = 'FORM POIN'
@@ -11,6 +11,7 @@ object Form8: TForm8
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
